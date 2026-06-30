@@ -1,0 +1,10 @@
+<section class="stats">
+  <div class="container stats__grid">
+    @for (s of stats; track s.label) {
+      <div class="stats__item">
+        <span class="stats__value gradient-text">{{ s.value }}</span>
+        <span class="stats__label">{{ s.label }}</span>
+      </div>
+    }
+  </div>
+</section>

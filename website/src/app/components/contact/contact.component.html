@@ -1,0 +1,60 @@
+<section id="contact" class="section contact">
+  <div class="container contact__grid">
+    <div class="contact__info">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Transformă-ți ideea într-un produs digital</h2>
+      <p class="section-subtitle">
+        Spune-ne despre proiectul tău și îți răspundem în maxim 24 de ore.
+      </p>
+
+      <div class="contact__details">
+        <div class="contact__detail">
+          <span class="contact__detail-label">Email</span>
+          <a href="mailto:contact@devcraftstudio.ro">contact&#64;devcraftstudio.ro</a>
+        </div>
+        <div class="contact__detail">
+          <span class="contact__detail-label">Telefon</span>
+          <a href="tel:+40700000000">+40 700 000 000</a>
+        </div>
+        <div class="contact__detail">
+          <span class="contact__detail-label">Locație</span>
+          <span>România</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact__form-wrapper">
+      @if (submitted()) {
+        <div class="contact__success">
+          <span class="contact__success-icon">✓</span>
+          <h3>Mulțumim!</h3>
+          <p>Mesajul tău a fost trimis. Te contactăm în curând.</p>
+        </div>
+      } @else {
+        <form class="contact__form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Nume</label>
+            <input id="name" type="text" [(ngModel)]="form.name" name="name" required placeholder="Numele tău" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" [(ngModel)]="form.email" name="email" required placeholder="email@exemplu.ro" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input id="phone" type="tel" [(ngModel)]="form.phone" name="phone" placeholder="+40 700 000 000" />
+          </div>
+          <div class="form-group">
+            <label for="message">Mesaj</label>
+            <textarea id="message" [(ngModel)]="form.message" name="message" required rows="4" placeholder="Descrie proiectul tău..."></textarea>
+          </div>
+          <label class="form-consent">
+            <input type="checkbox" [(ngModel)]="form.consent" name="consent" required />
+            Sunt de acord cu prelucrarea datelor conform Politicii de confidențialitate.
+          </label>
+          <button type="submit" class="btn btn-primary" [disabled]="!form.consent">Trimite mesajul</button>
+        </form>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section id="portfolio" class="section portfolio">
+  <div class="container">
+    <div class="portfolio__header">
+      <span class="section-label">Portofoliu</span>
+      <h2 class="section-title">Proiecte recente</h2>
+      <p class="section-subtitle">
+        O selecție din proiectele livrate pentru clienții noștri.
+      </p>
+    </div>
+
+    <div class="portfolio__grid">
+      @for (p of projects; track p.name) {
+        <article class="portfolio-card">
+          <div class="portfolio-card__visual" [style.background]="'linear-gradient(135deg, ' + p.color + '33, ' + p.color + '11)'">
+            <span class="portfolio-card__placeholder">{{ p.name.charAt(0) }}</span>
+          </div>
+          <div class="portfolio-card__info">
+            <span class="portfolio-card__category">{{ p.category }}</span>
+            <h3 class="portfolio-card__name">{{ p.name }}</h3>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

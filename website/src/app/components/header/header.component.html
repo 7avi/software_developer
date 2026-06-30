@@ -1,0 +1,39 @@
+<header class="header" [class.scrolled]="scrolled()">
+  <div class="container header__inner">
+    <a href="#home" class="logo" (click)="closeMenu()">
+      <span class="logo__icon">◆</span>
+      <span class="logo__text">DevCraft<span class="gradient-text">Studio</span></span>
+    </a>
+
+    <nav class="nav" [class.open]="menuOpen()">
+      @for (link of navLinks; track link.label) {
+        @if (link.hasDropdown) {
+          <div class="nav__dropdown">
+            <button class="nav__link nav__link--dropdown" (click)="toggleServices()">
+              {{ link.label }}
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M2 4l4 4 4-4"/>
+              </svg>
+            </button>
+            @if (servicesOpen()) {
+              <div class="nav__submenu">
+                @for (s of serviceLinks; track s.label) {
+                  <a [href]="s.href" class="nav__sublink" (click)="closeMenu()">{{ s.label }}</a>
+                }
+              </div>
+            }
+          </div>
+        } @else {
+          <a [href]="link.href" class="nav__link" (click)="closeMenu()">{{ link.label }}</a>
+        }
+      }
+      <a href="#contact" class="btn btn-primary nav__cta" (click)="closeMenu()">Contactează-ne</a>
+    </nav>
+
+    <button class="burger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

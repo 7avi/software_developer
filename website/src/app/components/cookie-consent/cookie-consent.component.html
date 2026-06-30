@@ -1,0 +1,12 @@
+@if (visible()) {
+  <div class="cookie-banner">
+    <p>
+      Utilizăm cookie-uri pentru a îmbunătăți experiența pe site.
+      Poți accepta sau respinge cookie-urile opționale.
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn-outline" (click)="reject()">Respinge</button>
+      <button class="btn btn-primary" (click)="accept()">Acceptă</button>
+    </div>
+  </div>
+}

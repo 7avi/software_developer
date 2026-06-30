@@ -1,0 +1,25 @@
+<section id="services" class="section services">
+  <div class="container">
+    <div class="services__header">
+      <span class="section-label">Ce oferim</span>
+      <h2 class="section-title">Contribuim la afacerea ta cu soluții excelente</h2>
+      <p class="section-subtitle">
+        Servicii complete de dezvoltare software pentru companii care vor prezență digitală profesională.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      @for (s of services; track s.number) {
+        <article class="service-card">
+          <div class="service-card__top">
+            <span class="service-card__number">{{ s.number }}</span>
+            <span class="service-card__icon">{{ s.icon }}</span>
+          </div>
+          <h3 class="service-card__title">{{ s.title }}</h3>
+          <p class="service-card__desc">{{ s.description }}</p>
+          <a href="#contact" class="service-card__link">Solicită ofertă →</a>
+        </article>
+      }
+    </div>
+  </div>
+</section>
